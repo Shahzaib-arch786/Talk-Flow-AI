@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ list = [], ButtonText, }) => {
   return (
     <div>
       <div className="navbar bg-gray-900 shadow-sm">
@@ -28,16 +28,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>About</a>
+                <a>{list[0]}</a>
               </li>
               <li>
-                <a>Features</a>
+                <a>{list[1]}</a>
               </li>
               <li>
-                <a>Pricing</a>
+                <a>{list[2]}</a>
               </li>
               <li>
-                <a>Contact</a>
+                <a>{list[3]}</a>
               </li>
             </ul>
           </div>
@@ -46,21 +46,21 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ml-96 gap-12">
             <li>
-              <a>About</a>
+              <a>{list[0]}</a>
             </li>
              <li>
-              <a>Features</a>
+              <a>{list[1]}</a>
             </li>
              <li>
-              <a>Pricing</a>
+              <a>{list[2]}</a>
             </li>
              <li>
-              <a>Contact</a>
+              <a>{list[3]}</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-blue-800 mr-7">Get Started</a>
+          <a className="btn bg-blue-800 mr-7">{ButtonText}</a>
         </div>
       </div>
     </div>

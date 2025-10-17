@@ -13,7 +13,7 @@ const handleAnimationComplete = () => {
 const Dashboard = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar list={["About", "Features", "Pricing", "Contact"]} ButtonText="Get Started" />
       {/* Hero Section */}
       <div
         className="hero min-h-screen bg-cover bg-center bg-no-repeat"
