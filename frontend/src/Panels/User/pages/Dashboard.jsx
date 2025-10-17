@@ -1,10 +1,11 @@
 import React from "react";
-import {Phone, Mic, FileText, Headset, BarChart, Shield} from "lucide-react";
+import { Phone, Mic, FileText, Headset, BarChart, Shield } from "lucide-react";
 import BlurText from "../components/BlurText";
 import Navbar from "../components/Navbar";
 import Cards from "../components/Cards";
 import PriceingCards from "../components/PriceingCards";
 import Footer from "../components/Footer";
+import Hyperspeed from "../components/HyperSpeed";
 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
@@ -13,24 +14,73 @@ const handleAnimationComplete = () => {
 const Dashboard = () => {
   return (
     <div>
-      <Navbar list={["About", "Features", "Pricing", "Contact"]} ButtonText="Get Started" />
+      <Navbar
+        list={["About", "Features", "Pricing", "Contact"]}
+        ButtonText="Get Started"
+      />
       {/* Hero Section */}
-      <div
-        className="hero min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url(https://images.pexels.com/photos/3791256/pexels-photo-3791256.jpeg)",
-        }}
-      >
-        {/* Overlay */}
-        <div className="hero-overlay bg-black/50"></div>
+      <div className="relative w-full h-screen overflow-hidden">
+        {/* Hyperspeed Background */}
+        {/* <div className="absolute top-1/4 left-1/4 w-full h-full -translate-x-1/2 -translate-y-1/2">
+          <Hyperspeed
+            className="w-full h-full"
+            effectOptions={{
+              onSpeedUp: () => {},
+              onSlowDown: () => {},
+              distortion: "turbulentDistortion",
+              length: 400,
+              roadWidth: 10,
+              islandWidth: 2,
+              lanesPerRoad: 4,
+              fov: 90,
+              fovSpeedUp: 150,
+              speedUp: 2,
+              carLightsFade: 0.4,
+              totalSideLightSticks: 20,
+              lightPairsPerRoadWay: 40,
+              shoulderLinesWidthPercentage: 0.05,
+              brokenLinesWidthPercentage: 0.1,
+              brokenLinesLengthPercentage: 0.5,
+              lightStickWidth: [0.12, 0.5],
+              lightStickHeight: [1.3, 1.7],
+              movingAwaySpeed: [60, 80],
+              movingCloserSpeed: [-120, -160],
+              carLightsLength: [400 * 0.03, 400 * 0.2],
+              carLightsRadius: [0.05, 0.14],
+              carWidthPercentage: [0.3, 0.5],
+              carShiftX: [-0.8, 0.8],
+              carFloorSeparation: [0, 5],
+              colors: {
+                roadColor: 0x080808,
+                islandColor: 0x0a0a0a,
+                background: 0x000000,
+                shoulderLines: 0xffffff,
+                brokenLines: 0xffffff,
+                leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
+                rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
+                sticks: 0x03b3c3,
+              },
+            }}
+          />
+        </div> */}
+        
+        {/*temporary background image will remove it and apply the hyperspeed effect */}
+        <div
+          className="relative w-full h-screen bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/3791256/pexels-photo-3791256.jpeg')",
+          }}
+        >
+        {/* Overlay (allows pointer events to pass) */}
+        <div className="absolute inset-0 bg-black/20 pointer-events-auto"></div>
 
-        {/* Content */}
-        <div className="hero-content text-neutral-content text-center px-4 sm:px-6 md:px-10">
-          <div className="max-w-lg mx-auto">
+        {/* Hero Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 text-center">
+          <div className="max-w-2xl space-y-6 animate-fade-up">
             <BlurText
               text="TalkFlow AI Call Assistant"
-              className="mb-5 text-3xl sm:text-4xl md:text-5xl font-bold"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold"
               delay={150}
               direction="top"
               onAnimationComplete={handleAnimationComplete}
@@ -39,17 +89,18 @@ const Dashboard = () => {
 
             <BlurText
               text="Revolutionize Your Communication with AI-Powered Call Management and Summaries"
-              className="mb-8 text-sm sm:text-base md:text-lg"
+              className="text-sm sm:text-base md:text-lg"
               delay={150}
               direction="top"
               onAnimationComplete={handleAnimationComplete}
               animateBy="words"
             />
 
-            <button className="btn bg-blue-800 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm sm:text-base">
+            <button className="btn bg-blue-800 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm sm:text-base animate-fade-up delay-200">
               Get Started
             </button>
           </div>
+        </div>
         </div>
       </div>
 
