@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   return (
@@ -16,7 +17,9 @@ const LoginForm = () => {
           <div className="card bg-gray-800 w-full max-w-sm shrink-0 shadow-2xl p-4 mb-12 lg:mb-0">
             <div className="card-body">
               <fieldset className="fieldset">
-                <legend className="label text-2xl font-bold text-center mb-6">Login</legend>
+                <legend className="label text-2xl font-bold text-center mb-6">
+                  Login
+                </legend>
                 <label className="label">Email</label>
                 <input type="email" className="input" placeholder="Email" />
                 <label className="label">Password</label>
@@ -28,10 +31,12 @@ const LoginForm = () => {
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
-                <button className="btn btn-neutral mt-4">Login</button>
+                <button onClick={() => {}} className="btn btn-neutral mt-4">
+                  Login
+                </button>
                 <div className="divider">OR</div>
                 <button className="btn btn-outline">Login with Google</button>
-                <a href="">Don't have an account? Sign up</a>
+                <Link to="/UserSignUp">Don't have an account? Sign up</Link>
               </fieldset>
             </div>
           </div>

@@ -1,12 +1,21 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
+
 const UserSignUp = () => {
   return (
-    <div>
+    <div
+       className="relative w-full h-screen bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/27252001/pexels-photo-27252001.jpeg')",
+          }}
+    >
+       <div className="absolute inset-0 bg-black/40 pointer-events-auto"></div>
       <Navbar
         list={["About", "Features", "Pricing", "Contact"]}
         ButtonText="Login Now"
+        link="/UserLogin"
       />
       <div className="hero bg-transparent min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse gap-12 px-6 sm:px-10 lg:px-20">
@@ -17,7 +26,7 @@ const UserSignUp = () => {
             </p>
           </div>
           <div className="card bg-gray-900 w-full max-w-sm shadow-2xl mb-12 lg:mb-0">
-            <div className="card-body">
+            <div className="card-body p-11">
               <fieldset className="fieldset">
                 <legend className="label text-2xl font-bold text-center mb-6">
                   Sign Up

@@ -117,7 +117,7 @@ const PriceingCards = ({famous, plan, price, features = [], nfeatures = [], butt
             </li>
           </ul>
           <div className="mt-6">
-            <button className="btn bg-blue-800 btn-block">{buttonText}</button>
+            <button className="btn bg-gradient-to-b from-blue-500 to-blue-700 btn-block">{buttonText}</button>
           </div>
         </div>
       </div>

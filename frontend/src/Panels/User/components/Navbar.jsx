@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ list = [], ButtonText, }) => {
+const Navbar = ({ list = [], ButtonText, link }) => {
   return (
     <div>
       <div className="navbar bg-gray-900 shadow-sm">
@@ -60,7 +61,12 @@ const Navbar = ({ list = [], ButtonText, }) => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-blue-800 mr-7">{ButtonText}</a>
+          <Link
+            to={link}
+            className="btn bg-gradient-to-b from-blue-500 to-blue-700 mr-7 text-white"
+          >
+            {ButtonText}
+          </Link>
         </div>
       </div>
     </div>

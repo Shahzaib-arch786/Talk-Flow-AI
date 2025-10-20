@@ -16,7 +16,8 @@ const Dashboard = () => {
     <div>
       <Navbar
         list={["About", "Features", "Pricing", "Contact"]}
-        ButtonText="Get Started"
+        ButtonText="Register Now"
+        link="/UserSignUp"
       />
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
@@ -73,7 +74,7 @@ const Dashboard = () => {
           }}
         >
         {/* Overlay (allows pointer events to pass) */}
-        <div className="absolute inset-0 bg-black/20 pointer-events-auto"></div>
+        <div className="absolute inset-0 bg-black/40 pointer-events-auto"></div>
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 text-center">
@@ -96,7 +97,7 @@ const Dashboard = () => {
               animateBy="words"
             />
 
-            <button className="btn bg-blue-800 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm sm:text-base animate-fade-up delay-200">
+            <button className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm sm:text-base animate-fade-up delay-200">
               Get Started
             </button>
           </div>
@@ -124,7 +125,7 @@ const Dashboard = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
-            <button className="btn bg-blue-800 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+            <button className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
               Learn More
             </button>
             <button className="btn btn-outline border-white hover:bg-white hover:text-gray-900 px-6 py-2 rounded-lg">

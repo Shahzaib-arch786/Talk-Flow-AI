@@ -8,6 +8,7 @@ const Userlogin = () => {
       <Navbar
         list={["About", "Features", "Pricing", "Contact"]}
         ButtonText="Register Now"
+        link="/UserSignUp"
       />
 
       <div
