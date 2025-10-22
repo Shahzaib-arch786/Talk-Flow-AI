@@ -1,12 +1,13 @@
 import './App.css'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import UserRoutes from './Panels/User/Routes.jsx'
+import AdminRoutes from './Panels/Admin/Routes.jsx'
 function App() {
 
   return (
     <>
       <div className='App'>
         <UserRoutes />
+        <AdminRoutes />
       </div>
     </>
   )

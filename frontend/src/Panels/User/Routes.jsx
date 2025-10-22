@@ -9,10 +9,10 @@ const UserRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/UserLogin" element={<Userlogin />} />
-        <Route path="/UserSignUp" element={<UserSignUp />} />
-        <Route path="/TrySimulation" element={<TrySimulation />} />
+        <Route path="/UD" element={<Dashboard />} />
+        <Route path="/UD/UserLogin" element={<Userlogin />} />
+        <Route path="/UD/UserSignUp" element={<UserSignUp />} />
+        <Route path="/UD/TrySimulation" element={<TrySimulation />} />
       </Routes>
     </Router>
   )
