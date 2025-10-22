@@ -6,6 +6,12 @@ __pycache__/
 # Virtual environments
 venv/
 backend/venv/
+ENV/
+env/
+
+# Environment variables
+.env
+.env.*
 
 # Database files
 *.sqlite3
@@ -15,6 +21,7 @@ backend/venv/
 build/
 dist/
 *.egg-info/
+.eggs/
 
 # Logs
 *.log
@@ -23,3 +30,44 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Installer logs
+pip-log.txt
+
+# Pytest
+.cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Docker
+**/docker-compose.override.yml
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
