@@ -1,6 +1,6 @@
 import { Search, Bell, Menu } from "lucide-react";
 
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = ({ toggleSidebar, navbarName }) => {
   return (
     <header className="bg-gray-900 p-4 flex justify-between items-center">
       {/* Left Section */}
@@ -15,7 +15,7 @@ const Navbar = ({ toggleSidebar }) => {
         </button>
 
         <h1 className="text-lg md:text-xl font-semibold text-white">
-          Admin Dashboard
+          {navbarName}
         </h1>
       </div>
 

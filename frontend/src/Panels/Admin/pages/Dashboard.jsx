@@ -18,7 +18,7 @@ const Dashboard = () => {
       {/* Main Section */}
       <div className="flex-1 flex flex-col transition-all duration-300 lg:ml-64">
         {/* Top Navbar */}
-        <Navbar toggleSidebar={toggleSidebar} />
+        <Navbar toggleSidebar={toggleSidebar} navbarName="Admin Dashboard" />
 
         {/* Dashboard Content */}
         <div className="p-4 sm:p-6 space-y-6">
