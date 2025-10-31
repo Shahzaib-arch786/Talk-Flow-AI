@@ -14,7 +14,7 @@ const Navbar = ({ toggleSidebar, navbarName }) => {
           <Menu className="w-6 h-6" />
         </button>
 
-        <h1 className="text-lg md:text-xl font-semibold text-white">
+        <h1 className="text-lg md:text-3xl md:-mb-4 font-bold text-white">
           {navbarName}
         </h1>
       </div>

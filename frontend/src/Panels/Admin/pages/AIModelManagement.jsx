@@ -29,6 +29,11 @@ const ModelManagement = () => {
 
         {/* Pagination */}
         <AIModelPagination />
+
+        <div className="mt-6 flex gap-4">
+          <button className="btn btn-outline btn-primary">Go To Model Testing</button>
+          <button className="btn btn-outline btn-secondary">Upload New Model</button>
+        </div>
       </main>
     </div>
   );
