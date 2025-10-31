@@ -1,9 +1,9 @@
 import React from "react";
 import { Search } from "lucide-react";
 
-const SearchFilterBar = () => {
+const AISearchFilterBar = () => {
   return (
-    <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
       {/* Search Bar */}
       <div className="relative w-full sm:w-1/2">
         <Search
@@ -12,21 +12,20 @@ const SearchFilterBar = () => {
         />
         <input
           type="text"
-          placeholder="Search by Model name"
-          className="bg-gray-900 border border-gray-800 rounded-lg pl-9 pr-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-gray-700"
+          placeholder="Search by model name"
+          className="bg-gray-800 border border-gray-700 rounded-lg pl-9 pr-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-gray-500 text-gray-200 placeholder-gray-500"
         />
       </div>
 
-      {/* Filter Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto">
-        <button className="flex h-9 items-center gap-x-2 rounded-lg bg-primary/20 pl-3 pr-2 text-primary">
-          <p className="text-sm font-medium">Status: All</p>
-          <span className="material-symbols-outlined">expand_more</span>
+      {/* Filter Buttons */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+        <button className="flex items-center gap-x-2 rounded-lg bg-gray-700 px-3 py-2 text-sm font-medium text-gray-200">
+          Status: All <span className="material-symbols-outlined">expand_more</span>
         </button>
         {["Active", "Training", "Inactive"].map((status) => (
           <button
             key={status}
-            className="flex h-9 items-center gap-x-2 rounded-lg bg-gray-200/60 px-3 py-2 text-gray-700 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/20"
+            className="flex items-center gap-x-2 rounded-lg bg-gray-700 px-3 py-2 text-sm font-medium text-gray-200 hover:bg-gray-600"
           >
             {status}
           </button>
@@ -36,4 +35,4 @@ const SearchFilterBar = () => {
   );
 };
 
-export default SearchFilterBar;
+export default AISearchFilterBar;
