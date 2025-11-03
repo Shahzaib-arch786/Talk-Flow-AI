@@ -6,20 +6,20 @@ import {
   Database,
   Cpu,
   Settings,
-  Menu,
   X,
   LifeBuoy,
   LogOut,
 } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const menu = [
-    { name: "Dashboard", icon: Home },
-    { name: "Users", icon: Users },
-    { name: "Tenants", icon: Database },
-    { name: "Calls", icon: Phone },
-    { name: "AI Models", icon: Cpu },
-    { name: "Settings", icon: Settings },
+    { name: "Dashboard", icon: Home, path: "/AD" },
+    { name: "Users", icon: Users, path: "/AD/users" },
+    { name: "Tenants", icon: Database, path: "/AD/tenant" },
+    { name: "Calls", icon: Phone, path: "/AD/calls" },
+    { name: "AI Models", icon: Cpu, path: "/AD/aimodels" },
+    { name: "Settings", icon: Settings, path: "/AD/settings" },
   ];
 
   return (
@@ -41,13 +41,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
         <nav className="flex-1 p-3 space-y-2">
           {menu.map((item, idx) => (
-            <button
+            <NavLink
               key={idx}
-              className="flex items-center gap-3 px-4 py-2 w-full text-left rounded-lg hover:bg-gray-700 transition"
+              to={item.path}
+              onClick={toggleSidebar}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-2 w-full text-left rounded-lg transition ${
+                  isActive
+                    ? "bg-blue-600 text-white font-medium"
+                    : "hover:bg-gray-700 text-gray-300"
+                }`
+              }
             >
               <item.icon className="w-5 h-5" />
               {item.name}
-            </button>
+            </NavLink>
           ))}
         </nav>
 
