@@ -7,6 +7,7 @@ import AIModelManagement from "./pages/AIModelManagement";
 import ModelTraining from "./pages/ModelTraining";
 import SystemSettings from "./pages/SystemSettings";
 import SupportTickets from "./pages/SupportTickets";
+import AddUser from "./pages/AddUser";
 
 export default function AdminRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AdminRoutes() {
         <Route path="/AD/modeltraining" element={<ModelTraining />} />
         <Route path="/AD/settings" element={<SystemSettings />} />
         <Route path="/AD/support" element={<SupportTickets />} />
+        <Route path="/AD/users/add" element={<AddUser />} />
       </Routes>
     </Router>
   );

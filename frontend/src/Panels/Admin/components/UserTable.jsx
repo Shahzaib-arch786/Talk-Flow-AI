@@ -1,6 +1,7 @@
 import React from "react";
 import UserRow from "./UserRow";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 const users = [
   { name:"Alex Johnson", email:"alex.j@example.com", role:"Admin", status:"Active", lastLogin:"2 days ago", image:"https://i.pravatar.cc/40?img=1"},
@@ -15,9 +16,9 @@ const UserTable = () => {
     <div className="w-full bg-gray-900 rounded-xl shadow-lg p-4 sm:p-6 overflow-x-auto border border-gray-700">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-white">User Management</h2>
-        <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
+        <Link to="/AD/users/add" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
           Add User
-        </button>
+        </Link>
       </div>
 
       <table className="w-full min-w-[700px] text-left text-sm text-gray-300">
