@@ -1,5 +1,13 @@
 import React from "react";
-import { Phone, Mic, FileText, Headset, BarChart, Shield } from "lucide-react";
+import {
+  Phone,
+  Mic,
+  FileText,
+  Headset,
+  BarChart,
+  Shield,
+  Link,
+} from "lucide-react";
 import BlurText from "../components/BlurText";
 import Navbar from "../components/Navbar";
 import Cards from "../components/Cards";
@@ -12,12 +20,19 @@ const handleAnimationComplete = () => {
 };
 
 const Dashboard = () => {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div>
       <Navbar
-        list={["About", "Features", "Pricing", "Contact"]}
+        list={["About", "Features", "Pricing", "Contact", "Try Simulation"]}
         ButtonText="Register Now"
-        link="/UserSignUp"
+        btnlink="/UD/UserSignUp"
+        simulation="/UD/TrySimulation"
       />
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
@@ -64,49 +79,56 @@ const Dashboard = () => {
             }}
           />
         </div> */}
-        
+
         {/*temporary background image will remove it and apply the hyperspeed effect */}
         <div
+          id="main"
           className="relative w-full h-screen bg-cover bg-center"
           style={{
             backgroundImage:
               "url('https://images.pexels.com/photos/3791256/pexels-photo-3791256.jpeg')",
           }}
         >
-        {/* Overlay (allows pointer events to pass) */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-auto"></div>
+          {/* Overlay (allows pointer events to pass) */}
+          <div className="absolute inset-0 bg-black/40 pointer-events-auto"></div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 text-center">
-          <div className="max-w-2xl space-y-6 animate-fade-up">
-            <BlurText
-              text="TalkFlow AI Call Assistant"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold"
-              delay={150}
-              direction="top"
-              onAnimationComplete={handleAnimationComplete}
-              animateBy="words"
-            />
+          {/* Hero Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 text-center">
+            <div className="max-w-2xl space-y-6 animate-fade-up">
+              <BlurText
+                text="TalkFlow AI Call Assistant"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                delay={150}
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                animateBy="words"
+              />
 
-            <BlurText
-              text="Revolutionize Your Communication with AI-Powered Call Management and Summaries"
-              className="text-sm sm:text-base md:text-lg"
-              delay={150}
-              direction="top"
-              onAnimationComplete={handleAnimationComplete}
-              animateBy="words"
-            />
+              <BlurText
+                text="Revolutionize Your Communication with AI-Powered Call Management and Summaries"
+                className="text-sm sm:text-base md:text-lg"
+                delay={150}
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                animateBy="words"
+              />
 
-            <button className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm sm:text-base animate-fade-up delay-200">
-              Get Started
-            </button>
+              <button
+                className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm sm:text-base animate-fade-up delay-200"
+                onClick={() => handleScroll("about")}
+              >
+                Get Started
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
       {/* About Section */}
-      <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gray-900 text-white items-center px-6 sm:px-10 lg:px-20 py-16">
+      <div
+        id="about"
+        className="min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gray-900 text-white items-center px-6 sm:px-10 lg:px-20 py-16"
+      >
         {/* Left Section (Text) */}
         <div className="text-center lg:text-left space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold">About</h2>
@@ -125,10 +147,16 @@ const Dashboard = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
-            <button className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+            <button
+              className="btn bg-gradient-to-b from-blue-500 to-blue-700 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+              onClick={() => handleScroll("features")}
+            >
               Learn More
             </button>
-            <button className="btn btn-outline border-white hover:bg-white hover:text-gray-900 px-6 py-2 rounded-lg">
+            <button
+              className="btn btn-outline border-white hover:bg-white hover:text-gray-900 px-6 py-2 rounded-lg"
+              onClick={() => handleScroll("contact")}
+            >
               Contact Us
             </button>
           </div>
@@ -145,7 +173,10 @@ const Dashboard = () => {
       </div>
 
       {/* Features Section */}
-      <div className="bg-gray-800 text-white py-16 px-6 sm:px-10 lg:px-20">
+      <div
+        id="features"
+        className="bg-gray-800 text-white py-16 px-6 sm:px-10 lg:px-20"
+      >
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
           Features
@@ -187,7 +218,10 @@ const Dashboard = () => {
       </div>
 
       {/* Pricing Section */}
-      <div className="bg-gray-900 text-white py-14 px-8 sm:px-10 lg:px-20">
+      <div
+        id="pricing"
+        className="bg-gray-900 text-white py-14 px-8 sm:px-10 lg:px-20"
+      >
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
           Pricing
@@ -235,10 +269,19 @@ const Dashboard = () => {
             buttonText="Choose Plan"
           />
         </div>
+        <a
+          href="/UD/TrySimulation"
+          className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg inline-flex text-center mx-auto"
+        >
+          Try Out Now For Free
+        </a>
       </div>
 
       {/*contact Section */}
-      <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-10 bg-gray-700 text-white items-center px-6 sm:px-10 lg:px-20 py-16">
+      <div
+        id="contact"
+        className="min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-10 bg-gray-700 text-white items-center px-6 sm:px-10 lg:px-20 py-16"
+      >
         {/* Left Section: Contact Form */}
         <div className="bg-gray-800 p-8 sm:p-10 rounded-2xl shadow-lg text-center lg:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Us</h2>

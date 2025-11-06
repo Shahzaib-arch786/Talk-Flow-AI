@@ -1,4 +1,6 @@
+import { ArrowRight, Link } from "lucide-react";
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const TryCallAssistant = () => {
   return (
@@ -10,25 +12,10 @@ const TryCallAssistant = () => {
             Call Assistant
           </span>
         </div>
-        <ul className="hidden md:flex space-x-6 text-gray-200 font-medium">
+        <ul className="flex space-x-6">
           <li>
-            <a href="#" className="hover:text-blue-600">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-600">
-              Analytics
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-600">
-              Playbooks
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-600">
-              Settings
+            <a href="/UD" className="hover:underline">
+              Back to Dashboard
             </a>
           </li>
         </ul>
@@ -66,7 +53,7 @@ const TryCallAssistant = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 py-12 border border-gray-700 rounded-lg mt-10 bg-gray-800 shadow-lg">
         <h1 className="text-3xl font-semibold mb-3">Try out Call Assistant</h1>
         <p className="text-gray-200 mb-8">
           Experience the power of Call Assistant with a free trial. Simply enter
@@ -119,8 +106,8 @@ const TryCallAssistant = () => {
         </section>
 
         {/* Suggested Prompts */}
-        <section>
-          <h2 className="text-xl font-semibold mb-2">Suggested Prompts</h2>
+        <section className="mb-10 border border-gray-500 p-6 rounded-2xl">
+          <h2 className="text-xl font-semibold mb-4 border-b-2 pb-3 border-gray-700">Suggested Prompts</h2>
           <p className="text-gray-200 mb-4">
             Try these prompts to explore the AI Call Assistant’s capabilities:
           </p>

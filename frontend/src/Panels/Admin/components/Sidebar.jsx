@@ -48,7 +48,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-2 w-full text-left rounded-lg transition ${
                   isActive
-                    ? "bg-blue-600 text-white font-medium"
+                    ? "bg-blue-600 text-white"
                     : "hover:bg-gray-700 text-gray-300"
                 }`
               }
